@@ -1,0 +1,10 @@
+{
+  "common": {
+    "locale": "en",
+    "localeName": "English"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Welcome to Next.js!"
+  }
+}
