@@ -34,7 +34,7 @@ export const siteConfig = {
       description: "All the products we have to offer.",
     },
     {
-      title: "Abaout us",
+      title: "About us",
       href: "/about",
       description: "Discover our stores and their products",
     },

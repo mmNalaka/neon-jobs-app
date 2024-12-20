@@ -4,6 +4,7 @@ import { siteConfig } from "~/src/config/site";
 
 import { Icons } from "~/src/components/icons";
 import { Navigation } from "./navigation";
+import { AuthDropdown } from "./auth-dropdown";
 
 export default function AppHeader() {
   return (
@@ -18,6 +19,7 @@ export default function AppHeader() {
       </div>
 
       <div className="flex items-center gap-2">
+        <AuthDropdown user={null} />
         {/* <ThemeSwitcher variant="outline" /> */}
       </div>
     </header>
