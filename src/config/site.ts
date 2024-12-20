@@ -1,3 +1,5 @@
+import { MainNavItem } from "~/src/types";
+
 export const siteConfig = {
   name: "Neon Jobs",
   url: "https://neon-jobs.vercel.app/",
@@ -20,6 +22,38 @@ export const siteConfig = {
     "SaaS",
     "Boilerplate",
   ],
+  // Main nav
+  mainNav: [
+    {
+      title: "Home",
+      href: "/",
+    },
+    {
+      title: "How it works",
+      href: "/how-it-works",
+      description: "All the products we have to offer.",
+    },
+    {
+      title: "Abaout us",
+      href: "/about",
+      description: "Discover our stores and their products",
+    },
+    {
+      title: "Success stories",
+      href: "/success-stories",
+      description: "Build your own custom skateboard.",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
+      description: "Read our latest blog posts.",
+    },
+    {
+      title: "Support",
+      href: "/support",
+      description: "Get in touch with us.",
+    },
+  ] satisfies MainNavItem[],
 } as const;
 
 export type SiteConfig = typeof siteConfig;

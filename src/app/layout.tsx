@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: siteConfig.keywords,
+  keywords: siteConfig.keywords as unknown as string[],
   authors: [
     {
       name: "cahya",

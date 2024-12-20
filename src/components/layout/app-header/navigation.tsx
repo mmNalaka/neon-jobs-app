@@ -14,15 +14,6 @@ import {
   AccordionTrigger,
 } from "~/src/components/ui/accordion";
 import { Button } from "~/src/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "~/src/components/ui/navigation-menu";
 import { ScrollArea } from "~/src/components/ui/scroll-area";
 import {
   Sheet,
@@ -33,7 +24,16 @@ import {
 } from "~/src/components/ui/sheet";
 import { siteConfig } from "~/src/config/site";
 import { useMediaQuery } from "~/src/hooks/use-media-query";
-import { cn } from "~/src/server/utils";
+import { cn } from "~/src/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "./navigation-menu";
 
 // ListItem component for NavigationMenu
 const ListItem = React.forwardRef<
@@ -52,8 +52,8 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 leading-snug text-muted-foreground">
             {children}
           </p>
         </Link>
@@ -129,11 +129,14 @@ export function Navigation({ items }: NavigationProps) {
                           href="/"
                           className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         >
-                          <Icons.logo className="h-6 w-6" aria-hidden="true" />
+                          <Icons.logoPrimary
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
                           <div className="mb-2 mt-4 text-lg font-medium">
                             {siteConfig.name}
                           </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
+                          <p className="text-md leading-tight text-muted-foreground">
                             {siteConfig.description}
                           </p>
                           <span className="sr-only">Home</span>
@@ -184,7 +187,10 @@ export function Navigation({ items }: NavigationProps) {
                     <NavigationMenuItem key={item.title}>
                       <Link href={item.href} legacyBehavior passHref>
                         <NavigationMenuLink
-                          className={cn(navigationMenuTriggerStyle(), "h-auto")}
+                          className={cn(
+                            navigationMenuTriggerStyle(),
+                            "h-auto text-base"
+                          )}
                         >
                           {item.title}
                         </NavigationMenuLink>
@@ -220,8 +226,10 @@ export function Navigation({ items }: NavigationProps) {
                   setOpen(false);
                 }}
               >
-                <Icons.logo className="mr-2 h-6 w-6" aria-hidden="true" />
-                <span className="font-bold text-lg">{siteConfig.name}</span>
+                <Icons.logoPrimary
+                  className="mr-2 h-6 w-22"
+                  aria-hidden="true"
+                />
                 <span className="sr-only">Home</span>
               </Link>
             </div>
@@ -230,7 +238,7 @@ export function Navigation({ items }: NavigationProps) {
                 <Accordion type="multiple" className="w-full">
                   {items?.map((item, index) => (
                     <AccordionItem value={item.title} key={index}>
-                      <AccordionTrigger className="text-sm capitalize">
+                      <AccordionTrigger className="capitalize">
                         {item.title}
                       </AccordionTrigger>
                       <AccordionContent>

@@ -1,13 +1,11 @@
 import Link from "next/link";
 
-import { AuthDropdown } from "~/components/layouts/auth-dropdown";
-import { siteConfig } from "~/config/site";
+import { siteConfig } from "~/src/config/site";
 
-import { Icons } from "./icons";
-import { Navigation } from "./layouts/navigation";
-import { User } from "better-auth/types";
+import { Icons } from "~/src/components/icons";
+import { Navigation } from "./navigation";
 
-export default function AppHeader({ user }: { user: User | null }) {
+export default function AppHeader() {
   return (
     <header className="flex h-20 shrink-0 items-center justify-between gap-2 px-4 mt-2">
       <Link href="/" className="items-center space-x-2 hidden sm:flex">
@@ -20,7 +18,6 @@ export default function AppHeader({ user }: { user: User | null }) {
       </div>
 
       <div className="flex items-center gap-2">
-        <AuthDropdown user={user} />
         {/* <ThemeSwitcher variant="outline" /> */}
       </div>
     </header>
