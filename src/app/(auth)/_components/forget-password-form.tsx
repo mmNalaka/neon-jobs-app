@@ -6,8 +6,8 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
-import { Icons } from "@/src/components/icons";
-import { Button } from "@/src/components/ui/button";
+import { Icons } from "~/src/components/icons";
+import { Button } from "~/src/components/ui/button";
 import {
   Form,
   FormControl,
@@ -15,10 +15,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/src/components/ui/form";
-import { Input } from "@/src/components/ui/input";
-import { authClient } from "@/src/lib/auth-client";
-import { signInFormSchema } from "@/src/lib/validations/auth";
+} from "~/src/components/ui/form";
+import { Input } from "~/src/components/ui/input";
+import { authClient } from "~/src/lib/auth-client";
+import { signInFormSchema } from "~/src/lib/validations/auth";
 import { toast } from "sonner";
 
 type Inputs = Pick<z.infer<typeof signInFormSchema>, "email">;

@@ -1,5 +1,5 @@
-import { Badge } from "@/src/components/ui/badge";
-import { Button } from "@/src/components/ui/button";
+import { Badge } from "~/src/components/ui/badge";
+import { Button } from "~/src/components/ui/button";
 import { MoveRight, PhoneCall } from "lucide-react";
 
 export const HeroGrid = () => {

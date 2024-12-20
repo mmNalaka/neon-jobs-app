@@ -1,4 +1,4 @@
-import { siteConfig } from "@/src/config/site";
+import { siteConfig } from "~/src/config/site";
 import {
   Body,
   Button,

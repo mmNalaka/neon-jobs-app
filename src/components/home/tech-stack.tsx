@@ -1,6 +1,6 @@
 "use client";
 
-import { Icons } from "@/src/components/icons";
+import { Icons } from "~/src/components/icons";
 import { useEffect, useState } from "react";
 import { useScramble } from "use-scramble";
 

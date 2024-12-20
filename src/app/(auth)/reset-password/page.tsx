@@ -1,4 +1,4 @@
-import { Shell } from "@/src/components/shell";
+import { Shell } from "~/src/components/shell";
 import { Suspense } from "react";
 import ResetPasswordForm from "../_components/reset-password-form";
 

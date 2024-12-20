@@ -1,7 +1,7 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import type * as React from "react";
 
-import { cn } from "@/src/lib/utils";
+import { cn } from "~/src/lib/utils";
 
 const shellVariants = cva("grid my-6 items-center px-5 lg:px-12", {
   variants: {

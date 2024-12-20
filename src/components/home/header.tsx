@@ -4,7 +4,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/src/components/ui/avatar";
+} from "~/src/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,9 +13,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/src/components/ui/dropdown-menu";
-import { Separator } from "@/src/components/ui/separator";
-import { signOut, useSession } from "@/src/lib/auth-client";
+} from "~/src/components/ui/dropdown-menu";
+import { Separator } from "~/src/components/ui/separator";
+import { signOut, useSession } from "~/src/lib/auth-client";
 import { BadgeCheck, CreditCard, Gauge, LogOut, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

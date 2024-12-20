@@ -1,13 +1,13 @@
 import { Check, MoveRight, PhoneCall } from "lucide-react";
-import { Badge } from "@/src/components/ui/badge";
+import { Badge } from "~/src/components/ui/badge";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { Button } from "@/src/components/ui/button";
+} from "~/src/components/ui/card";
+import { Button } from "~/src/components/ui/button";
 
 export default function Pricing() {
   return (

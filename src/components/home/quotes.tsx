@@ -1,6 +1,6 @@
 "use client";
 
-import { useKeyboardShortcut } from "@/src/hooks/useKeyboardShortcuts";
+import { useKeyboardShortcut } from "~/src/hooks/useKeyboardShortcuts";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 

@@ -1,12 +1,12 @@
-import { ForgetPasswordForm } from "@/src/app/(auth)/_components/forget-password-form";
-import { Shell } from "@/src/components/shell";
+import { ForgetPasswordForm } from "~/src/app/(auth)/_components/forget-password-form";
+import { Shell } from "~/src/components/shell";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
+} from "~/src/components/ui/card";
 
 export default function ForgotPasswordPage() {
   return (

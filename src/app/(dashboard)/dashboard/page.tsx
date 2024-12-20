@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/src/components/sidebar/app-sidebar";
+import { AppSidebar } from "~/src/components/sidebar/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,14 +6,14 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/src/components/ui/breadcrumb";
-import { Separator } from "@/src/components/ui/separator";
+} from "~/src/components/ui/breadcrumb";
+import { Separator } from "~/src/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/src/components/ui/sidebar";
-import { getSession } from "@/src/lib/auth";
+} from "~/src/components/ui/sidebar";
+import { getSession } from "~/src/lib/auth";
 import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {

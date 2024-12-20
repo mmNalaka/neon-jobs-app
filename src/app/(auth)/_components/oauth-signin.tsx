@@ -3,9 +3,9 @@
 import * as React from "react";
 import { toast } from "sonner";
 
-import { Icons } from "@/src/components/icons";
-import { Button } from "@/src/components/ui/button";
-import { authClient } from "@/src/lib/auth-client";
+import { Icons } from "~/src/components/icons";
+import { Button } from "~/src/components/ui/button";
+import { authClient } from "~/src/lib/auth-client";
 
 const oauthProviders = [
   { name: "GitHub", provider: "github", icon: "gitHub" },

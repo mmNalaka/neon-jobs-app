@@ -1,6 +1,6 @@
 "use client";
 
-import { Shell } from "@/src/components/shell";
+import { Shell } from "~/src/components/shell";
 import { Content } from "./content";
 import Header from "./header";
 import { HeroGrid } from "./hero-grid";

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import { GeistSans } from "geist/font/sans";
 
-import { TailwindIndicator } from "@/src/components/tailwind-indicator";
-import { ThemeProvider } from "@/src/components/theme-provider";
-import { siteConfig } from "@/src/config/site";
-import { cn } from "@/src/lib/utils";
+import { TailwindIndicator } from "~/src/components/tailwind-indicator";
+import { ThemeProvider } from "~/src/components/theme-provider";
+import { siteConfig } from "~/src/config/site";
+import { cn } from "~/src/lib/utils";
 
-import "@/src/styles/globals.css";
+import "~/src/styles/globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

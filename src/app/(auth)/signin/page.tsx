@@ -1,6 +1,6 @@
 "use client";
 
-import { Shell } from "@/src/components/shell";
+import { Shell } from "~/src/components/shell";
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
+} from "~/src/components/ui/card";
 import Link from "next/link";
 import { OAuthSignIn } from "../_components/oauth-signin";
 import { SignInForm } from "../_components/signin-form";

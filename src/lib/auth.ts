@@ -5,10 +5,10 @@ import { organization } from "better-auth/plugins";
 import { headers } from "next/headers";
 import { cache } from "react";
 
-import ResetPasswordEmail from "@/src/components/emails/reset-password-email";
-import VerificationEmail from "@/src/components/emails/verification-email";
-import db from "@/src/db";
-import { resend } from "@/src/lib/resend";
+import ResetPasswordEmail from "~/src/components/emails/reset-password-email";
+import VerificationEmail from "~/src/components/emails/verification-email";
+import db from "~/src/db";
+import { resend } from "~/src/lib/resend";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {

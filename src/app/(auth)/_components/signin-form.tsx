@@ -7,9 +7,9 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import type { z } from "zod";
 
-import { Icons } from "@/src/components/icons";
-import { PasswordInput } from "@/src/components/password-input";
-import { Button } from "@/src/components/ui/button";
+import { Icons } from "~/src/components/icons";
+import { PasswordInput } from "~/src/components/password-input";
+import { Button } from "~/src/components/ui/button";
 import {
   Form,
   FormControl,
@@ -17,10 +17,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/src/components/ui/form";
-import { Input } from "@/src/components/ui/input";
-import { authClient } from "@/src/lib/auth-client";
-import { signInFormSchema } from "@/src/lib/validations/auth";
+} from "~/src/components/ui/form";
+import { Input } from "~/src/components/ui/input";
+import { authClient } from "~/src/lib/auth-client";
+import { signInFormSchema } from "~/src/lib/validations/auth";
 
 type SignInFormValues = z.infer<typeof signInFormSchema>;
 

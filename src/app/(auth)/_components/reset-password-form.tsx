@@ -6,16 +6,16 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
-import { Icons } from "@/src/components/icons";
-import { PasswordInput } from "@/src/components/password-input";
-import { Button } from "@/src/components/ui/button";
+import { Icons } from "~/src/components/icons";
+import { PasswordInput } from "~/src/components/password-input";
+import { Button } from "~/src/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
+} from "~/src/components/ui/card";
 import {
   Form,
   FormControl,
@@ -23,9 +23,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/src/components/ui/form";
-import { authClient } from "@/src/lib/auth-client";
-import { resetPasswordSchema } from "@/src/lib/validations/auth";
+} from "~/src/components/ui/form";
+import { authClient } from "~/src/lib/auth-client";
+import { resetPasswordSchema } from "~/src/lib/validations/auth";
 import { toast } from "sonner";
 
 type Inputs = z.infer<typeof resetPasswordSchema>;
