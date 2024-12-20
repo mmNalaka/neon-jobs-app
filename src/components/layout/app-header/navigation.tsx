@@ -4,16 +4,16 @@ import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import * as React from "react";
 
-import type { MainNavItem } from "~/types";
+import type { MainNavItem } from "~/src/types";
 
-import { Icons } from "~/components/icons";
+import { Icons } from "~/src/components/icons";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "~/components/ui/accordion";
-import { Button } from "~/components/ui/button";
+} from "~/src/components/ui/accordion";
+import { Button } from "~/src/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,18 +22,18 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "~/components/ui/navigation-menu";
-import { ScrollArea } from "~/components/ui/scroll-area";
+} from "~/src/components/ui/navigation-menu";
+import { ScrollArea } from "~/src/components/ui/scroll-area";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "~/components/ui/sheet";
-import { siteConfig } from "~/config/site";
-import { useMediaQuery } from "~/hooks/use-media-query";
-import { cn } from "~/server/utils";
+} from "~/src/components/ui/sheet";
+import { siteConfig } from "~/src/config/site";
+import { useMediaQuery } from "~/src/hooks/use-media-query";
+import { cn } from "~/src/server/utils";
 
 // ListItem component for NavigationMenu
 const ListItem = React.forwardRef<
@@ -48,7 +48,7 @@ const ListItem = React.forwardRef<
           href={String(href)}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
+            className
           )}
           {...props}
         >
@@ -87,7 +87,7 @@ function MobileLink({
         "text-foreground/70 transition-colors hover:text-foreground",
         href.includes(segment) && "text-foreground",
         disabled && "pointer-events-none opacity-60",
-        className,
+        className
       )}
       onClick={() => {
         setOpen(false);
@@ -191,7 +191,7 @@ export function Navigation({ items }: NavigationProps) {
                       </Link>
                     </NavigationMenuItem>
                   )
-                ),
+                )
               )}
           </NavigationMenuList>
         </NavigationMenu>
@@ -254,7 +254,7 @@ export function Navigation({ items }: NavigationProps) {
                               >
                                 {subItem.title}
                               </div>
-                            ),
+                            )
                           )}
                         </div>
                       </AccordionContent>
