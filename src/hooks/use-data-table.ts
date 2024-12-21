@@ -14,13 +14,14 @@ import {
   type SortingState,
   type VisibilityState,
 } from "@tanstack/react-table";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/lib/i18n"
+import { useSearchParams } from "next/navigation";
 import * as React from "react";
 import { z } from "zod";
 
-import type { DataTableFilterField } from "~/types";
+import type { DataTableFilterField } from "~/src/types";
 
-import { useDebounce } from "~/hooks/use-debounce";
+import { useDebounce } from "~/src/hooks/use-debounce";
 
 type UseDataTableProps<TData, TValue> = {
   /**

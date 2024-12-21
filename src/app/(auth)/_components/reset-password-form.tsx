@@ -1,7 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "@/lib/i18n"
+import { useSearchParams } from "next/navigation";
 import * as React from "react";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";

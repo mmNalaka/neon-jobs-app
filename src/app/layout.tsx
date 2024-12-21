@@ -1,3 +1,5 @@
+import { LanguageProvider } from "@inlang/paraglide-next"
+import { languageTag } from "@/paraglide/runtime.js"
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import { GeistSans } from "geist/font/sans";
@@ -51,8 +53,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
+    <LanguageProvider>
+   <html
+      lang={languageTag()}
       suppressHydrationWarning
       className={`${GeistSans.variable}`}
     >
@@ -69,5 +72,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+ </LanguageProvider>
   );
 }

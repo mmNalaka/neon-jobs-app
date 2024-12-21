@@ -14,7 +14,7 @@ import {
   SidebarTrigger,
 } from "~/src/components/ui/sidebar";
 import { getSession } from "~/src/lib/auth";
-import { redirect } from "next/navigation";
+import { redirect } from "@/lib/i18n";
 
 export default async function DashboardPage() {
   const session = await getSession();

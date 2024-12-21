@@ -17,8 +17,8 @@ import {
 import { Separator } from "~/src/components/ui/separator";
 import { signOut, useSession } from "~/src/lib/auth-client";
 import { BadgeCheck, CreditCard, Gauge, LogOut, Sparkles } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Link } from "@/lib/i18n";
+import { useRouter } from "@/lib/i18n";
 
 const navigationItems = [
   { href: "/docs", label: "Documentation" },

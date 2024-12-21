@@ -1,0 +1,6 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "auth_sign_in": "Sign in",
+  "auth_sign_up": "Sign up",
+  "auth_sign_out": "Sign out"
+}

@@ -8,7 +8,7 @@ import {
   Sparkles,
   Triangle,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n";
 
 import {
   Avatar,
@@ -31,7 +31,7 @@ import {
   useSidebar,
 } from "~/src/components/ui/sidebar";
 import { signOut, useSession } from "~/src/lib/auth-client";
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
 
 export function NavUser() {
   const { isMobile } = useSidebar();

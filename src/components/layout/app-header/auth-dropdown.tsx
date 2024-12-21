@@ -1,34 +1,43 @@
 "use client";
 
-import { ExitIcon, EnterIcon } from "@radix-ui/react-icons";
-import { User } from "better-auth/types";
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
+import { EnterIcon, ExitIcon } from "@radix-ui/react-icons";
 import * as React from "react";
 
+import { BadgeCheck, CreditCard, Gauge, Sparkles } from "lucide-react";
+import * as m from "~/paraglide/messages";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "~/src/components/ui/avatar";
 import { Button, type ButtonProps } from "~/src/components/ui/button";
-import { Separator } from "~/src/components/ui/separator";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "~/src/components/ui/dropdown-menu";
+import { Separator } from "~/src/components/ui/separator";
 import { Skeleton } from "~/src/components/ui/skeleton";
+import { signOut, useSession } from "~/src/lib/auth-client";
 
-type AuthDropdownProps = {
-  user: User | null;
-} & React.ComponentPropsWithRef<typeof DropdownMenuTrigger> &
+type AuthDropdownProps = {} & React.ComponentPropsWithRef<
+  typeof DropdownMenuTrigger
+> &
   ButtonProps;
 
-export function AuthDropdown({ user, ...props }: AuthDropdownProps) {
+export function AuthDropdown({ ...props }: AuthDropdownProps) {
+  const { data } = useSession();
+  const user = data?.user;
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
+
   if (!user) {
     return (
       <>
@@ -50,7 +59,7 @@ export function AuthDropdown({ user, ...props }: AuthDropdownProps) {
           <Separator orientation="vertical" className="mx-2 h-8" />
           <Button size="lg" variant="secondaryOutline" {...props} asChild>
             <Link href="/signin">
-              Sign In <EnterIcon />{" "}
+              {m.auth_sign_in()} <EnterIcon />{" "}
             </Link>
           </Button>
         </div>
@@ -92,14 +101,32 @@ export function AuthDropdown({ user, ...props }: AuthDropdownProps) {
               ))}
             </div>
           }
-        ></React.Suspense>
+        >
+          <DropdownMenuGroup>
+            <DropdownMenuItem disabled>
+              <Sparkles className="mr-2 h-4 w-4" />
+              <span>Upgrade to Pro</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem disabled>
+              <BadgeCheck className="mr-2 h-4 w-4" />
+              <span>Account</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem disabled>
+              <CreditCard className="mr-2 h-4 w-4" />
+              <span>Billing</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/dashboard">
+                <Gauge className="mr-2 h-4 w-4" />
+                <span>Dashboard</span>
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
+        </React.Suspense>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link href="/signout">
-            <ExitIcon className="mr-2 size-4" aria-hidden="true" />
-            Log out
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </Link>
+        <DropdownMenuItem onSelect={handleSignOut}>
+          <ExitIcon className="mr-2 size-4" aria-hidden="true" />
+          Log out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

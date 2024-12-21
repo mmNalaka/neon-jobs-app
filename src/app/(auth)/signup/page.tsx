@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/src/components/ui/card";
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
 import { OAuthSignIn } from "../_components/oauth-signin";
 import { SignUpForm } from "../_components/signup-form";
 

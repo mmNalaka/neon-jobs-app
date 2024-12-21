@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
 import { useSelectedLayoutSegment } from "next/navigation";
 import * as React from "react";
 
